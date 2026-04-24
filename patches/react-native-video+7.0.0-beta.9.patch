@@ -1,0 +1,24 @@
+ diff --git a/node_modules/react-native-video/ReactNativeVideo.podspec b/node_modules/react-native-video/ReactNativeVideo.podspec
+index 26122a6..2fdc342 100644
+--- a/node_modules/react-native-video/ReactNativeVideo.podspec
++++ b/node_modules/react-native-video/ReactNativeVideo.podspec
+@@ -32,9 +32,16 @@ Pod::Spec.new do |s|
+   # Cxx to Swift bridging helpers
+   s.public_header_files = ["ios/Video-Bridging-Header.h"]
+ 
+-  s.pod_target_xcconfig = {
+-    "GCC_PREPROCESSOR_DEFINITIONS" => "$(inherited) FOLLY_NO_CONFIG FOLLY_CFG_NO_COROUTINES FOLLY_MOBILE"
+-  }
++  header_search_paths = [
++    '$(inherited)',
++    '"$(PODS_ROOT)/../../node_modules/react-native/ReactCommon"',
++    '"$(PODS_ROOT)/../../node_modules/react-native/ReactCommon/jsinspector-modern"'
++  ].join(' ')
++
++   s.pod_target_xcconfig = {
++    "GCC_PREPROCESSOR_DEFINITIONS" => "$(inherited) FOLLY_NO_CONFIG FOLLY_CFG_NO_COROUTINES FOLLY_MOBILE",
++    "HEADER_SEARCH_PATHS" => header_search_paths
++   }
+ 
+   # Try to manually add the dependencies
+   # because they are not automatically added by expo
