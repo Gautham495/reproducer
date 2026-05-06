@@ -10,7 +10,7 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.gautham-vijay.reproducer"
+      "bundleIdentifier": "com.apolloshot"
     },
     "android": {
       "adaptiveIcon": {
@@ -21,7 +21,7 @@
       },
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
-      "package": "com.gautham_vijay.reproducer"
+      "package": "com.apolloshot"
     },
     "web": {
       "output": "static",
